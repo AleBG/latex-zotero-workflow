@@ -1,23 +1,21 @@
-# Fichiers dans ce repo
+## Fichiers dans ce repo
 
   - Deux fichiers `.tex` minimales pour exemplifier l'usage de `biblatex` avec deux formats différents ("numeric" et APA)
   - Un fichier `.bib` minimale appelé depuis les fichier `.tex`
   - Deux fichiers `.pdf` compilés en utilisant les fichier `.tex` dans mon ordinateur personnel
 
+## Outils et environnement utilisés
 
-# Outils et environnement utilisés
-
-  - Distribution LaTeX [\underline{texlive}](https://packages.debian.org/stretch/texlive-full) (spécifiquement, `texlive-full`) pour Debian Linux
+  - Distribution LaTeX [texlive](https://packages.debian.org/stretch/texlive-full) (spécifiquement, `texlive-full`) pour Debian Linux
     + Important : elle contient le package `biblatex` utilisé dans mon exemple
-  - Éditeur de texte [\underline{TeXstudio}](https://www.texstudio.org/)
+  - Éditeur de texte [TeXstudio](https://www.texstudio.org/)
     + Compilation faite avec XeLaTeX
-  - Logiciel [\underline{Zotero}](https://www.zotero.org/download/)
-    + Complément [\underline{Better BibTeX for Zotero}](https://retorque.re/zotero-better-bibtex/) : pour exporter une selection dans Zotero au format `.bib` utilisable avec LaTeX + biblatex ; configuration personnelle du format des *citation keys* : `[auth.etal:lower][year]`
+  - Logiciel [Zotero](https://www.zotero.org/download/)
+    + Complément [Better BibTeX for Zotero](https://retorque.re/zotero-better-bibtex/) : pour exporter une selection dans Zotero au format `.bib` utilisable avec LaTeX + biblatex ; configuration personnelle du format des *citation keys* : `[auth.etal:lower][year]`
     + Une compte personnelle Zotero : pour synchroniser ma libraire Zotero dans tous mes appareils
-  - Complément [\underline{Zotero Connector}](https://www.zotero.org/download/) pour Firefox
+  - Complément [Zotero Connector](https://www.zotero.org/download/) pour Firefox
 
-
-# Workflow
+## Workflow
 
 1. Trouver des textes académiques potentiellement utilisables sur internet
 
@@ -37,14 +35,14 @@ Zotero Connector marche très bien mais il n'est pas infaillible, il faut s'assu
   5.1 Ajouter `\usepackage[<options>]{biblatex}` et les packages recommandés par biblatex avant appeler le `.bib` :
 ```tex
 \usepackage{csquotes, xpatch}  % Recommandé par biblatex
-\usepackage[backend=biber,bibstyle=numeric-verb,citestyle=numeric]{biblatex}
+\usepackage[backend=biber,bibstyle=numeric-verb,citestyle=numeric,sorting=none]{biblatex}
 \addbibresource{bibliography.bib}
 ```
-$\quad\quad$ 5.2 Et imprimer la section de références en utilisant la commande `\printbibliography` dans le corps du texte :
+  5.2 Et imprimer la section de références en utilisant la commande `\printbibliography[<options>]` dans le corps du texte :
 ```tex
 \begin{document}
 ```
-$⋮$
+⋮
 ```tex
 \printbibliography
 \end{document}
@@ -53,5 +51,4 @@ $⋮$
 Par ex., si on ne fait pas référence à un des textes du fichier `.bib`, ce texte ne sera pas imprimé avec `\printbibliography`. Pour changer cela on ajoute la commande `\nocite{*}` avant dans le corps pour forcer l'apparition de tous les textes du fichier `.bib` dans la section des références.
 
 
-
-[\underline{TeX Stack Exchange}](https://tex.stackexchange.com/) est votre ami !
+6. Consulter [TeX Stack Exchange](https://tex.stackexchange.com/) si quelque chose ne marche pas !
