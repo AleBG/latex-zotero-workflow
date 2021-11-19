@@ -1,0 +1,50 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+
+%%% Format
+\usepackage{libertineRoman}  % Use libertine font (open alternative to Times New Roman)
+\usepackage[left=2.50cm, right=2.50cm, top=3cm, bottom=3cm]{geometry}  % Manipulate margins
+\usepackage{indentfirst}  % Starts paragraphs with indentation
+\usepackage{setspace}  % Manipulate interline space
+\setstretch{1.5}  % setspace command
+
+
+%%% References and bibliography configuration
+\usepackage[american]{babel}  % Language
+\usepackage{csquotes, xpatch}  % Recommended by biblatex
+\usepackage[backend=biber, style=apa, citestyle=apa, sorting=nyt]{biblatex}  % APA style sorting by name, year, title (in order)
+\DeclareFieldFormat{apacase}{#1}  % To override biblatex casing, which looks ugly
+\addbibresource{bibliography.bib}  % Loads the .bib file
+%% Custom quote environment
+\usepackage{etoolbox}  % To modify quote environment
+\AtBeginEnvironment{quote}{\raggedright}  % Custome quote ragged right (APA format)
+
+
+%%% Links and TOC configuration
+\usepackage{hyperref}  % To generate clickable TOC
+\hypersetup{colorlinks=true, linktoc=all, linkcolor=black,  urlcolor=black, citecolor=black}  % Setup for hyperlinks: force all black; "linktoc" to have links to subsections
+\usepackage[nottoc]{tocbibind}  % To make the References appear in the TOC
+
+
+\begin{document}
+	
+\tableofcontents
+
+\newpage
+
+\section{Some Section}
+
+Minimal bibliography example.
+Citations look like this \parencite{hoyningen-huene2013} and this \parencite{manzo.vanderijt2020}.
+The custom quote environment created in the preamble just replicates ragged right format, but it can be made more complex if needed to adjust to citation guidelines (APA, etc.).
+A quote from \parencite[27]{hoyningen-huene2013} looks like this:
+\begin{quote}
+	In order to carry our analysis of “systematicity” further, I will have to determine the contexts in which I intend to use the term and then make its more concrete 	meanings in these contexts explicit. I will claim nine dimensions (or “areas” or 	“aspects”) of science in which science is more systematic than other kinds of 	knowledge. These dimensions are the contexts in which we will find, in a natural 	way, richer, that is, more concrete meanings of “systematicity.” My main thesis 	will decompose correspondingly into nine distinct theses, claiming higher 	systematicity (in a context dependent sense) for each of those dimensions.
+\end{quote}
+
+
+\nocite{*}  % Force not cited texts appear in the References
+\printbibliography[heading=bibintoc]
+	
+\end{document}
