@@ -1,7 +1,7 @@
 ## Fichiers dans ce repo
 
   - Deux fichiers `.tex` minimales pour exemplifier l'usage de `biblatex` avec deux formats différents ("numeric" et APA)
-  - Un fichier `.bib` minimale appelé depuis les fichier `.tex`
+  - Un fichier `.bib` minimale appelé depuis les fichier `.tex`, exporté depuis Zotero
   - Deux fichiers `.pdf` compilés en utilisant les fichier `.tex` dans mon ordinateur personnel
 
 ## Outils et environnement utilisés
